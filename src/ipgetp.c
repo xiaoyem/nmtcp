@@ -24,15 +24,17 @@
  * permission from the copyright holders.
  */
 
-#include <arpa/inet.h>
-#include "ip.h"
+#include <stddef.h>
+#include "netmap_user.h"
 
-/* convert an IP packet header from net to host byte order */
-struct ip *ipnet2h(struct ip *pip) {
-	/* NOTE: does not include IP options */
-	pip->ip_len     = ntohs(pip->ip_len);
-	pip->ip_id      = ntohs(pip->ip_id);
-	pip->ip_fragoff = ntohs(pip->ip_fragoff);
-	return pip;
+/* FIXME */
+char *ipgetp(struct netmap_ring *ring) {
+	while (!nm_ring_empty(ring)) {
+		char *buf = NETMAP_BUF(ring, ring->slot[ring->cur].buf_idx);
+
+		ring->head = ring->cur = nm_ring_next(ring, ring->cur);
+		return buf;
+	}
+	return NULL;
 }
 

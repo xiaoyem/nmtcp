@@ -27,6 +27,7 @@
 #include <arpa/inet.h>
 #include "ip.h"
 
+/* convert an IP packet header from host to net byte order */
 struct ip *iph2net(struct ip *pip) {
 	/* NOTE: does not include IP options */
 	pip->ip_len     = htons(pip->ip_len);
