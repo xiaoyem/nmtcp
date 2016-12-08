@@ -10,6 +10,7 @@ AC_CONFIG_SRCDIR([src/ipgetp.c])
 # Checks for programs.
 AC_PROG_CC
 AC_PROG_LIBTOOL
+AM_PROG_CC_C_O
 
 # Checks for libraries.
 
@@ -33,7 +34,8 @@ AC_FUNC_MMAP
 AC_CHECK_FUNCS([bzero gettimeofday munmap strerror strtol])
 
 AC_CONFIG_FILES([Makefile
-                 src/Makefile])
+                 src/Makefile
+                 test/Makefile])
 AC_OUTPUT
 
 echo "
