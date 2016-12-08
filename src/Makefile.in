@@ -71,7 +71,7 @@ am__installdirs = "$(DESTDIR)$(libdir)"
 LTLIBRARIES = $(lib_LTLIBRARIES)
 libnmtcp_la_LIBADD =
 am_libnmtcp_la_OBJECTS = libnmtcp_la-iph2net.lo libnmtcp_la-ipnet2h.lo \
-	libnmtcp_la-ipgetp.lo
+	libnmtcp_la-ipgetp.lo libnmtcp_la-cksum.lo
 libnmtcp_la_OBJECTS = $(am_libnmtcp_la_OBJECTS)
 libnmtcp_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(libnmtcp_la_CFLAGS) \
@@ -205,7 +205,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 lib_LTLIBRARIES = libnmtcp.la
-libnmtcp_la_SOURCES = iph2net.c ipnet2h.c ipgetp.c
+libnmtcp_la_SOURCES = iph2net.c ipnet2h.c ipgetp.c cksum.c
 libnmtcp_la_CPPFLAGS = -I$(top_srcdir)/include
 libnmtcp_la_CFLAGS = -fPIC -Wall
 libnmtcp_la_LDFLAGS = -release 0.0.1 -version-info 0:0:0
@@ -283,6 +283,7 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libnmtcp_la-cksum.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libnmtcp_la-ipgetp.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libnmtcp_la-iph2net.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libnmtcp_la-ipnet2h.Plo@am__quote@
@@ -328,6 +329,13 @@ libnmtcp_la-ipgetp.lo: ipgetp.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='ipgetp.c' object='libnmtcp_la-ipgetp.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(LIBTOOL)  --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnmtcp_la_CPPFLAGS) $(CPPFLAGS) $(libnmtcp_la_CFLAGS) $(CFLAGS) -c -o libnmtcp_la-ipgetp.lo `test -f 'ipgetp.c' || echo '$(srcdir)/'`ipgetp.c
+
+libnmtcp_la-cksum.lo: cksum.c
+@am__fastdepCC_TRUE@	$(LIBTOOL)  --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnmtcp_la_CPPFLAGS) $(CPPFLAGS) $(libnmtcp_la_CFLAGS) $(CFLAGS) -MT libnmtcp_la-cksum.lo -MD -MP -MF $(DEPDIR)/libnmtcp_la-cksum.Tpo -c -o libnmtcp_la-cksum.lo `test -f 'cksum.c' || echo '$(srcdir)/'`cksum.c
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/libnmtcp_la-cksum.Tpo $(DEPDIR)/libnmtcp_la-cksum.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='cksum.c' object='libnmtcp_la-cksum.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(LIBTOOL)  --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnmtcp_la_CPPFLAGS) $(CPPFLAGS) $(libnmtcp_la_CFLAGS) $(CFLAGS) -c -o libnmtcp_la-cksum.lo `test -f 'cksum.c' || echo '$(srcdir)/'`cksum.c
 
 mostlyclean-libtool:
 	-rm -f *.lo

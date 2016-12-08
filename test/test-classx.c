@@ -1,27 +1,20 @@
 /*
- * Portions of this software are covered by the following copyright:
+ * Copyright (c) 2016, Dalian Futures Information Technology Co., Ltd.
  *
- * Copyright (c) 1995, 1998 Douglas E. Comer, David L. Stevens, and
- * Prentice Hall, Inc. All rights reserved.
+ * Xiaoye Meng <mengxiaoye at dce dot com dot cn>
  *
- * Redistribution and use in source and binary forms are permitted
- * provided that this notice is preserved and that due credit is given
- * to the copyright holders. The names of the copyright holders
- * may not be used to endorse or promote products derived from this
- * software without specific prior written permission. This software
- * is provided ``as is'' without express or implied warranty. The authors
- * assume no liability for damages incidental or consequential, nor is the
- * software warranted for correctness or suitability for any purpose.
- *	Portions of this software are documented in the book:
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published
+ * by the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
  *
- *	Internetworking With TCP/IP Vol 2:
- *	Design, Implementation, and Internals
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
  *
- *	Prentice Hall, Upper Saddle River, New Jersey.
- *	ISBN: 0-13-973843-6
- *
- * This software may not be sold or published in printed form without written
- * permission from the copyright holders.
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 #include <stdio.h>

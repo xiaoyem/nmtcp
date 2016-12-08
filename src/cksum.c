@@ -24,21 +24,14 @@
  * permission from the copyright holders.
  */
 
-/*
- * revised by xiaoyem
- */
-
-#include <stddef.h>
-#include "netmap_user.h"
-
 /* FIXME */
-char *ipgetp(struct netmap_ring *ring) {
-	while (!nm_ring_empty(ring)) {
-		char *buf = NETMAP_BUF(ring, ring->slot[ring->cur].buf_idx);
+short cksum(unsigned short *buf, int nwords) {
+	unsigned long sum;
 
-		ring->head = ring->cur = nm_ring_next(ring, ring->cur);
-		return buf;
-	}
-	return NULL;
+	for (sum = 0; nwords > 0; --nwords)
+		sum += *buf++;
+	sum  = (sum >> 16) + (sum & 0xffff);
+	sum += (sum >> 16);
+	return ~sum;
 }
 

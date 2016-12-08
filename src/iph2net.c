@@ -24,6 +24,10 @@
  * permission from the copyright holders.
  */
 
+/*
+ * revised by xiaoyem
+ */
+
 #include <arpa/inet.h>
 #include "ip.h"
 
